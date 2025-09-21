@@ -1,6 +1,6 @@
-  .hero {
-    background-size: auto auto !important;
-  }
+.hero {
+  background-size: auto auto !important;
+}
 @media (max-width: 600px) {
   .hero {
     min-height: 220px;
@@ -48,15 +48,16 @@
     padding: 0 0;
     font-size: 1rem;
   }
-  .feature p{
-    font-size: .7rem;
+  .feature p {
+    font-size: 0.7rem;
   }
   .feature h3 {
-    font-size: .7rem;
+    font-size: 0.7rem;
     word-break: break-word;
   }
-  .btn-primary, .btn-secondary {
-    font-size: .7rem;
+  .btn-primary,
+  .btn-secondary {
+    font-size: 0.7rem;
     padding: 0.7rem 1.2rem;
     border-radius: 22px;
   }
@@ -299,9 +300,9 @@ nav a:hover {
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
-    flex-direction: row !important;
-    gap: 1.2rem !important;
-    align-items: center !important;
+  flex-direction: row !important;
+  gap: 1.2rem !important;
+  align-items: center !important;
 }
 .feature {
   background: #daf6c0;
