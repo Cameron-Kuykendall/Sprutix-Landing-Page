@@ -1,9 +1,8 @@
-
 // Simple slideshow logic with swipe/drag support
 document.addEventListener("DOMContentLoaded", function () {
   const slides = document.querySelectorAll(".slideshow-img");
   const dots = document.querySelectorAll(".dot");
-  const container = document.querySelector('.slideshow-container');
+  const container = document.querySelector(".slideshow-container");
   let current = 0;
   function showSlide(idx) {
     slides.forEach((img, i) => {
@@ -55,13 +54,13 @@ document.addEventListener("DOMContentLoaded", function () {
     dragging = false;
   }
   if (container) {
-    container.addEventListener('touchstart', onStart, {passive:true});
-    container.addEventListener('touchmove', onMove, {passive:true});
-    container.addEventListener('touchend', onEnd);
-    container.addEventListener('mousedown', onStart);
-    container.addEventListener('mousemove', onMove);
-    container.addEventListener('mouseup', onEnd);
-    container.addEventListener('mouseleave', onEnd);
+    container.addEventListener("touchstart", onStart, { passive: true });
+    container.addEventListener("touchmove", onMove, { passive: true });
+    container.addEventListener("touchend", onEnd);
+    container.addEventListener("mousedown", onStart);
+    container.addEventListener("mousemove", onMove);
+    container.addEventListener("mouseup", onEnd);
+    container.addEventListener("mouseleave", onEnd);
   }
   showSlide(0);
 });
