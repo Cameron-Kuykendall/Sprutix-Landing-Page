@@ -1,3 +1,7 @@
+  .hero {
+    background-size: 140% auto !important;
+    background-attachment: scroll !important;
+  }
 /* Gold star icon for features */
 .star-icon {
   width: 1.5em;
