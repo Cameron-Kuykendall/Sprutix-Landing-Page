@@ -1,8 +1,38 @@
-/* Sticky bar stays until hero content */
-.sticky-hero-wrapper {
+/* Sticky wrapper to control sticky bounds */
+.sticky-wrapper {
+  min-height: 600px; /* Adjust as needed */
+  min-height: 100px; /* Adjust as needed */
+  max-height: 295px; /* Adjust as needed, lower value ends sticky sooner */
   position: relative;
-  height: 340px; /* Adjust this value so sticky ends at hero content */
-  overflow: visible;
+}
+/* Sticky top social bar */
+.top-social-bar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: #daf6c0;
+  z-index: 200;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.283);
+  padding: 0.3em 0;
+}
+.top-social-bar .social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.08em;
+  font-family: inherit;
+  width: 100%;
+}
+.top-social-bar .social-links a {
+  color: #264f00;
+  font-weight: 600;
+  text-decoration: none;
+  margin: 0 0.2em;
+  transition: color 0.2s;
+}
+.top-social-bar .social-links a:hover {
+  color: #0f9d07;
 }
 /* Sticky top social nav bar */
 .top-social-bar {
@@ -16,11 +46,7 @@
   text-align: center;
 }
 .top-social-bar .social-links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.08em;
-  width: 100%;
+  /* removed duplicate, now handled above */
 }
 .hero {
   background-size: 140% auto !important;
