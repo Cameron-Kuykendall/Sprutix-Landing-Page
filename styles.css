@@ -46,7 +46,8 @@
   text-align: center;
 }
 .top-social-bar .social-links {
-  /* removed duplicate, now handled above */
+  display: inline-block;
+  font-size: 1.08em;
 }
 .hero {
   background-size: 140% auto !important;
