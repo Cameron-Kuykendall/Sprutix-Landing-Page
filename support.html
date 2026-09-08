@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,13 +9,25 @@
   </head>
   <body>
     <header>
-      <img src="images/logo.png" alt="Sprutix Logo" class="logo-img" style="width:90px; height:auto; margin:1.2rem;" />
+      <img
+        src="images/logo.png"
+        alt="Sprutix Logo"
+        class="logo-img"
+        style="width: 90px; height: auto; margin: 1.2rem"
+      />
     </header>
     <main>
       <section class="support-container">
         <h1>Contact Support</h1>
         <p>If you need help with the app, fill out the form below and we'll get back to you.</p>
-        <form id="support-form" class="support-form" novalidate action="mailto:sprutixfeedback@gmail.com" method="post" enctype="text/plain">
+        <form
+          id="support-form"
+          class="support-form"
+          novalidate
+          action="mailto:sprutixfeedback@gmail.com"
+          method="post"
+          enctype="text/plain"
+        >
           <label for="name">Name *</label>
           <input type="text" id="name" name="name" placeholder="Your name" required />
 
@@ -26,7 +38,13 @@
           <input type="text" id="account" name="account" placeholder="Account number (if available)" />
 
           <label for="message">Message *</label>
-          <textarea id="message" name="message" rows="6" placeholder="Describe your issue or question" required></textarea>
+          <textarea
+            id="message"
+            name="message"
+            rows="6"
+            placeholder="Describe your issue or question"
+            required
+          ></textarea>
 
           <div class="form-actions">
             <button type="submit" class="btn-primary">Send Message</button>

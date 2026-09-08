@@ -65,60 +65,60 @@ document.addEventListener("DOMContentLoaded", function () {
   showSlide(0);
 });
 
-  // Support form submit handler (adds client-side validation and confirmation)
-  document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("support-form");
-    if (!form) return;
-    const status = document.getElementById("form-status");
+// Support form submit handler (adds client-side validation and confirmation)
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("support-form");
+  if (!form) return;
+  const status = document.getElementById("form-status");
 
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      const name = form.name.value.trim();
-      const email = form.email.value.trim();
-      const message = form.message.value.trim();
-      const account = form.account ? form.account.value.trim() : "";
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const message = form.message.value.trim();
+    const account = form.account ? form.account.value.trim() : "";
 
-      if (!name || !email || !message) {
-        if (status) {
-          status.style.color = "crimson";
-          status.textContent = "Please complete the required fields.";
-        }
-        return;
+    if (!name || !email || !message) {
+      if (status) {
+        status.style.color = "crimson";
+        status.textContent = "Please complete the required fields.";
       }
+      return;
+    }
 
-      if (form.action && form.action.startsWith("mailto:")) {
-        const to = form.action;
-        const subject = encodeURIComponent(`Support request from ${name}${account ? ' (Acct: ' + account + ')' : ''}`);
-        const bodyLines = [
-          `Name: ${name}`,
-          `Contact email: ${email}`,
-          account ? `Account: ${account}` : null,
-          "",
-          "Message:",
-          `${message}`,
-        ].filter(Boolean);
-        const body = encodeURIComponent(bodyLines.join('\n'));
-        const mailto = `${to}?subject=${subject}&body=${body}`;
-        window.location.href = mailto;
-        if (status) {
-          status.style.color = "#0f9d07";
-          status.textContent = "Opening your email client to send the message...";
-        }
-        return;
-      }
-
+    if (form.action && form.action.startsWith("mailto:")) {
+      const to = form.action;
+      const subject = encodeURIComponent(`Support request from ${name}${account ? " (Acct: " + account + ")" : ""}`);
+      const bodyLines = [
+        `Name: ${name}`,
+        `Contact email: ${email}`,
+        account ? `Account: ${account}` : null,
+        "",
+        "Message:",
+        `${message}`,
+      ].filter(Boolean);
+      const body = encodeURIComponent(bodyLines.join("\n"));
+      const mailto = `${to}?subject=${subject}&body=${body}`;
+      window.location.href = mailto;
       if (status) {
         status.style.color = "#0f9d07";
-        status.textContent = "Sending…";
+        status.textContent = "Opening your email client to send the message...";
       }
+      return;
+    }
 
-      // Simulate send for non-mailto actions
-      setTimeout(function () {
-        if (status) {
-          status.style.color = "#0f9d07";
-          status.textContent = "Thanks — your message was received. We'll reply soon.";
-        }
-        form.reset();
-      }, 700);
-    });
+    if (status) {
+      status.style.color = "#0f9d07";
+      status.textContent = "Sending…";
+    }
+
+    // Simulate send for non-mailto actions
+    setTimeout(function () {
+      if (status) {
+        status.style.color = "#0f9d07";
+        status.textContent = "Thanks — your message was received. We'll reply soon.";
+      }
+      form.reset();
+    }, 700);
   });
+});
